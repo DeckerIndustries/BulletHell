@@ -7,6 +7,7 @@ TagManager:
   - Player_Bullet
   - Enemy_Bullet
   - Enemy
+  - Powerup
   layers:
   - Default
   - TransparentFX
@@ -47,7 +48,7 @@ TagManager:
   - name: Units
     uniqueID: 4088051727
     locked: 0
-  - name: Bullets and Hitboxes
+  - name: Bullets, Hitboxes, and Powerups
     uniqueID: 2552185877
     locked: 0
   - name: Default

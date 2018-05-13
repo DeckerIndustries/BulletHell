@@ -10,6 +10,63 @@ TextureImporter:
     21300006: Enemy_Green
     21300008: Enemy_Blue
     21300010: Enemy_Purple
+    21300012: Ship_Spritesheet_0
+    21300014: Ship_Spritesheet_1
+    21300016: Ship_Spritesheet_2
+    21300018: Ship_Spritesheet_3
+    21300020: Ship_Spritesheet_4
+    21300022: Ship_Spritesheet_5
+    21300024: Ship_Spritesheet_6
+    21300026: Ship_Spritesheet_7
+    21300028: Ship_Spritesheet_8
+    21300030: Ship_Spritesheet_9
+    21300032: Ship_Spritesheet_10
+    21300034: Ship_Spritesheet_11
+    21300036: Ship_Spritesheet_12
+    21300038: Ship_Spritesheet_13
+    21300040: Ship_Spritesheet_14
+    21300042: Ship_Spritesheet_15
+    21300044: Ship_Spritesheet_16
+    21300046: Ship_Spritesheet_17
+    21300048: Ship_Spritesheet_18
+    21300050: Ship_Spritesheet_19
+    21300052: Ship_Spritesheet_20
+    21300054: Ship_Spritesheet_21
+    21300056: Ship_Spritesheet_22
+    21300058: Ship_Spritesheet_23
+    21300060: Ship_Spritesheet_24
+    21300062: Ship_Spritesheet_25
+    21300064: Ship_Spritesheet_26
+    21300066: Ship_Spritesheet_27
+    21300068: Ship_Spritesheet_28
+    21300070: Ship_Spritesheet_29
+    21300072: Ship_Spritesheet_30
+    21300074: Ship_Spritesheet_31
+    21300076: Ship_Spritesheet_32
+    21300078: Ship_Spritesheet_33
+    21300080: Ship_Spritesheet_34
+    21300082: Ship_Spritesheet_35
+    21300084: Ship_Spritesheet_36
+    21300086: Ship_Spritesheet_37
+    21300088: Ship_Spritesheet_38
+    21300090: Ship_Spritesheet_39
+    21300092: Ship_Spritesheet_40
+    21300094: Ship_Spritesheet_41
+    21300096: Ship_Spritesheet_42
+    21300098: Ship_Spritesheet_43
+    21300100: Ship_Spritesheet_44
+    21300102: Ship_Spritesheet_45
+    21300104: Ship_Spritesheet_46
+    21300106: Ship_Spritesheet_47
+    21300108: Ship_Spritesheet_48
+    21300110: Ship_Spritesheet_49
+    21300112: Ship_Spritesheet_56
+    21300114: Enemy_Big_Red
+    21300116: Enemy_Big_Orange
+    21300118: Enemy_Big_Yellow
+    21300120: Enemy_Big_Green
+    21300122: Enemy_Big_Blue
+    21300124: Enemy_Big_Purple
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -96,6 +153,706 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: Ship_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 541
+        width: 114
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 541
+        width: 114
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 541
+        width: 114
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 541
+        width: 114
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 484
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 484
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 371
+        width: 129
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 445
+        width: 200
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 405
+        width: 200
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 344
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 344
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 344
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 344
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 344
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 286
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 286
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 286
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 285
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 285
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 285
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 274
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 274
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 238
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 238
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 238
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 230
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 230
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 230
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 253
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 253
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 191
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 191
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 191
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 176
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 176
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 176
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 207
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 206
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 201
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 198
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 173
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 170
+        width: 58
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 128
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 128
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 119
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 119
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 119
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 119
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 119
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 105
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
       name: Enemy_Red
       rect:
         serializedVersion: 2
@@ -104,7 +861,7 @@ TextureImporter:
         width: 34
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -118,7 +875,7 @@ TextureImporter:
         width: 34
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,7 +889,7 @@ TextureImporter:
         width: 34
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +903,7 @@ TextureImporter:
         width: 34
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,7 +917,7 @@ TextureImporter:
         width: 34
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,7 +931,105 @@ TextureImporter:
         width: 34
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ship_Spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 41
+        width: 20
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy_Big_Red
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 11
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy_Big_Orange
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 11
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy_Big_Yellow
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 11
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy_Big_Green
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 11
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy_Big_Blue
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 11
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Enemy_Big_Purple
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 11
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

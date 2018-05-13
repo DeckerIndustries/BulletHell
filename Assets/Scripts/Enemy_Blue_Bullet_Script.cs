@@ -16,7 +16,7 @@ public class Enemy_Blue_Bullet_Script : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         speed = 3;
 
-        player = GameObject.Find("Player"); // this lets the bullet have information about the player.
+        player = GameObject.FindGameObjectWithTag("Player"); // this lets the bullet have information about the player.
 
         velocity_x = player.transform.position.x - transform.position.x;
         velocity_y = player.transform.position.y - transform.position.y;
@@ -28,12 +28,16 @@ public class Enemy_Blue_Bullet_Script : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        
+        if (ExitBoundary() == true)
+            Destroy(gameObject);
 	}
 
-    // This function (given to us by Unity!) lets us decide what to do when the object leaves the camera view.
-    void OnBecameInvisible()
+    // checks if the the bullet left the boundary of our game (which I decided to be slightly larger than the part the camera sees)
+    bool ExitBoundary()
     {
-        Destroy(gameObject);
+        if (rb.position.x < -4 || rb.position.x > 4 || rb.position.y < -1.5 || rb.position.y > 9.5)
+            return true;
+        else
+            return false;
     }
 }

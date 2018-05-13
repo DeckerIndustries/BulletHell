@@ -11,7 +11,7 @@ public class Reimu_Bullet_1B : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameObject player = GameObject.Find("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         // if the bullet is spawned to the left of the player, it will move in an arc to the left.  Otherwise, it will move in an arc moving to the right.
         if (player.transform.position.x < transform.position.x)
@@ -26,12 +26,17 @@ public class Reimu_Bullet_1B : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        if (ExitBoundary() == true)
+            Destroy(gameObject);
         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + 1);
     }
 
-    // This function (given to us by Unity!) lets us decide what to do when the object leaves the camera view.
-    void OnBecameInvisible()
+    // checks if the the bullet left the boundary of our game (which I decided to be slightly larger than the part the camera sees)
+    bool ExitBoundary()
     {
-        Destroy(gameObject);
+        if (rb.position.x < -4 || rb.position.x > 4 || rb.position.y < -0.5 || rb.position.y > 9.5)
+            return true;
+        else
+            return false;
     }
 }

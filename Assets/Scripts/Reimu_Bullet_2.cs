@@ -18,6 +18,10 @@ public class Reimu_Bullet_2 : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        // checks if the bullet left the boundary of the game
+        if (ExitBoundary() == true)
+            Destroy(gameObject);
+
         GameObject enemy = GameObject.FindWithTag("Enemy");
         if(enemy != null)
         {
@@ -26,14 +30,15 @@ public class Reimu_Bullet_2 : MonoBehaviour
             //print("ev");
             rb.velocity = rb.velocity + vector_to_an_enemy;
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, 10);
-            //Vector3 rotation_vector = new Vector3(rb.velocity.x, rb.velocity.y, 0);
-            //transform.rotation = Quaternion.LookRotation(rotation_vector);
         }
 	}
 
-    // destroys the object if it leaves the camera view
-    void OnBecameInvisible()
+    // checks if the the bullet left the boundary of our game (which I decided to be slightly larger than the part the camera sees)
+    bool ExitBoundary()
     {
-        Destroy(gameObject);
+        if (rb.position.x < -4 || rb.position.x > 4 || rb.position.y < -1.5 || rb.position.y > 9.5)
+            return true;
+        else
+            return false;
     }
 }

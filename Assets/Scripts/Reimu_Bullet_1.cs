@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Reimu_Bullet_1 : MonoBehaviour
 {
-    private int speed;
+    private float speed;
     private Rigidbody2D rb;
 
 	// Use this for initialization
@@ -16,13 +16,18 @@ public class Reimu_Bullet_1 : MonoBehaviour
 	}
 
     // Update is called once per frame
-    //void Update () {
-
-    //}
-
-    // This function (given to us by Unity!) lets us decide what to do when the object leaves the camera view.
-    void OnBecameInvisible()
+    void Update ()
     {
-        Destroy(gameObject);
+        if (ExitBoundary() == true)
+            Destroy(gameObject);
+    }
+
+    // checks if the the bullet left the boundary of our game (which I decided to be slightly larger than the part the camera sees)
+    bool ExitBoundary()
+    {
+        if (rb.position.x < -4 || rb.position.x > 4 || rb.position.y < -1.5 || rb.position.y > 9.5)
+            return true;
+        else
+            return false;
     }
 }

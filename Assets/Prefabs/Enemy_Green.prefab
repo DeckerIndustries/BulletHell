@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327c50611239084419c14ff420412803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
   bullet: {fileID: 1261898868597462, guid: 30d7e2e1f0d85ea448faf869ef3cf70b, type: 2}
+  powerup: {fileID: 1200099012386466, guid: 8fc826fd697a95a48a3d5e511c6f810f, type: 2}
+  hp: 20
 --- !u!212 &212992892339790494
 SpriteRenderer:
   m_ObjectHideFlags: 1
