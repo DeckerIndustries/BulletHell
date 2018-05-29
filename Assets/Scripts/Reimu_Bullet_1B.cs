@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reimu_Bullet_1B : MonoBehaviour
+public class Reimu_Bullet_1B : Bullet
 {
     private float x_velocity;
     private float y_velocity;
-    private Rigidbody2D rb;
 
     // Use this for initialization
     void Start()
@@ -29,14 +28,5 @@ public class Reimu_Bullet_1B : MonoBehaviour
         if (ExitBoundary() == true)
             Destroy(gameObject);
         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + 1);
-    }
-
-    // checks if the the bullet left the boundary of our game (which I decided to be slightly larger than the part the camera sees)
-    bool ExitBoundary()
-    {
-        if (rb.position.x < -4 || rb.position.x > 4 || rb.position.y < -0.5 || rb.position.y > 9.5)
-            return true;
-        else
-            return false;
     }
 }

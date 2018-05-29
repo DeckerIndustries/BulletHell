@@ -14,7 +14,6 @@ public class Marissa : PlayerCharacter
     //private float fire_rate_2;
     //private float next_fire_2;
     //private int powerupBarrier2;
-    private float speed;
     //private float xVelocity, yVelocity;
     //private float posX, posY;
     //private float xMin = -3, xMax = 3, yMin = -0.5f, yMax = 8.5f;
@@ -35,6 +34,11 @@ public class Marissa : PlayerCharacter
         //powerupBarrier1 = 10;
         //powerupBarrier2 = 20;
         powerupLevel = 0;
+
+        xMin = -3; xMax = 3; yMin = -0.5f; yMax = 8.5f;
+
+        focussedSpeed = 3;
+        nonFocussedSpeed = 6;
     }
 
     void FixedUpdate()
