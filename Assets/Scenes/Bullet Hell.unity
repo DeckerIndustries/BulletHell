@@ -197,15 +197,15 @@ GameObject:
   - component: {fileID: 1066233407}
   - component: {fileID: 1066233409}
   - component: {fileID: 1066233412}
-  - component: {fileID: 1066233411}
   - component: {fileID: 1066233410}
+  - component: {fileID: 1066233411}
   m_Layer: 0
   m_Name: Marissa
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1066233407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet_1: {fileID: 1944651159000384, guid: 066d598bf4c9c594a96ed9305750ce64, type: 2}
+  bullet_2: {fileID: 1880858766018392, guid: 252a9ffff95fc964ab607328bc819323, type: 2}
 --- !u!50 &1066233412
 Rigidbody2D:
   serializedVersion: 4
@@ -603,7 +604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2072266907
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reimu_Bullet_2 : MonoBehaviour
+public class Reimu_Bullet_2 : Bullet
 {
     private float max_velocity;
-    private Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start ()
@@ -32,13 +31,4 @@ public class Reimu_Bullet_2 : MonoBehaviour
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, 10);
         }
 	}
-
-    // checks if the the bullet left the boundary of our game (which I decided to be slightly larger than the part the camera sees)
-    bool ExitBoundary()
-    {
-        if (rb.position.x < -4 || rb.position.x > 4 || rb.position.y < -1.5 || rb.position.y > 9.5)
-            return true;
-        else
-            return false;
-    }
 }

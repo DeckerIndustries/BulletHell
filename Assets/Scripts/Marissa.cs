@@ -2,25 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Marissa : MonoBehaviour
+public class Marissa : PlayerCharacter
 {
     public GameObject bullet_1;
     //public GameObject bullet_1B;
-    //public GameObject bullet_2;
+    public GameObject bullet_2;
+    private float shotAngle;    // controls what angle the secondary bullets will be shot
 
-    private float fire_rate_1;
-    private float next_fire_1;
-    //private int powerupBarrier1;
-    //private float fire_rate_2;
-    //private float next_fire_2;
-    //private int powerupBarrier2;
-    private float speed;
-    private float xVelocity, yVelocity;
-    private float posX, posY;
-    private float xMin = -3, xMax = 3, yMin = -0.5f, yMax = 8.5f;
-    private float powerupLevel;
-    private Rigidbody2D rb;     // this is the player object.
-    private Animator animator;  // controlls animation
+    private float shotAngleTime;
 
     void Start()
     {
@@ -29,24 +18,28 @@ public class Marissa : MonoBehaviour
 
         fire_rate_1 = 0.05f;
         next_fire_1 = 0;
-        //fire_rate_2 = 0.25f;
-        //next_fire_2 = 0;
+        fire_rate_2 = 0.10f;
+        next_fire_2 = 0;
 
-        //powerupBarrier1 = 10;
-        //powerupBarrier2 = 20;
+        powerupBarrier1 = 10;
+        powerupBarrier2 = 20;
+
+        xMin = -3; xMax = 3; yMin = -0.5f; yMax = 8.5f;
+
         powerupLevel = 0;
+        shotAngleTime = 0;
+
+        focussedSpeed = 3;
+        nonFocussedSpeed = 6;
     }
 
     void FixedUpdate()
     {
-
         // slow down ship if shift is pressed down
         if (Input.GetKey(KeyCode.LeftShift))
-            speed = 3;
+            MovePlayer(focussedSpeed);
         else
-            speed = 6;
-
-        Move_Player();
+            MovePlayer(nonFocussedSpeed);
 
         // shoots bullets if the player is holding the space key
         if (Input.GetKey("z"))
@@ -56,7 +49,23 @@ public class Marissa : MonoBehaviour
             {
                 Fire_Bullet_1();
             }
+            // this makes sure the bullets are fired at a certain rate
+            if (Time.time > next_fire_2)
+            {
+                if(powerupLevel >= powerupBarrier1)
+                    FireBullet2A();
+                if (powerupLevel >= powerupBarrier2)
+                    FireBullet2B();
+                next_fire_2 = Time.time + fire_rate_2;
+            }
+
+            // Here, we update the shot angle for the secondary bullets.  The shots don't rotate in focused mode
+            if (!(Input.GetKey(KeyCode.LeftShift)))
+                shotAngleTime += Time.deltaTime;
         }
+
+        // Calculates the shot angle for the secondary bullets for the next frame.
+        shotAngle = 10 * Mathf.Sin(3 * shotAngleTime) + 5; // This will always be between -5 and 15 degrees.
     }
 
     // only powerups collide with the player (bullets collide with the hitbox)
@@ -69,7 +78,7 @@ public class Marissa : MonoBehaviour
         }
     }
 
-    void Move_Player()
+    /*void Move_Player()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -123,24 +132,28 @@ public class Marissa : MonoBehaviour
         // set the player's position and velocity
         rb.position = new Vector2(posX, posY);
         rb.velocity = new Vector2(xVelocity, yVelocity);
-    }
+    }*/
 
     void Fire_Bullet_1()
     {
         next_fire_1 = Time.time + fire_rate_1;
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            Vector3 bullet_position_A1 = new Vector3(transform.position.x + 0.2f, transform.position.y + 0.5f, 0);
-            Vector3 bullet_position_A2 = new Vector3(transform.position.x - 0.2f, transform.position.y + 0.5f, 0);
-            Instantiate(bullet_1, bullet_position_A1, Quaternion.identity);
-            Instantiate(bullet_1, bullet_position_A2, Quaternion.identity);
-        }
-        else
-        {
-            Vector3 bullet_position_A1 = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.3f, 0);
-            Vector3 bullet_position_A2 = new Vector3(transform.position.x - 0.4f, transform.position.y + 0.3f, 0);
-            Instantiate(bullet_1, bullet_position_A1, Quaternion.identity);
-            Instantiate(bullet_1, bullet_position_A2, Quaternion.identity);
-        }
+        Vector3 bullet_position = new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
+        Instantiate(bullet_1, bullet_position, Quaternion.identity);
+    }
+
+    void FireBullet2A()
+    {
+        Vector3 bullet_position_1 = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.4f, 0);
+        Vector3 bullet_position_2 = new Vector3(transform.position.x - 0.4f, transform.position.y + 0.4f, 0);
+        Instantiate(bullet_2, bullet_position_1, Quaternion.Euler(0, 0, shotAngle));      // swap the negative in the next two lines for a different effect
+        Instantiate(bullet_2, bullet_position_2, Quaternion.Euler(0, 0, -shotAngle));
+    }
+
+    void FireBullet2B()
+    {
+        Vector3 bullet_position_3 = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.1f, 0);
+        Vector3 bullet_position_4 = new Vector3(transform.position.x - 0.6f, transform.position.y + 0.1f, 0);
+        Instantiate(bullet_2, bullet_position_3, Quaternion.Euler(0, 0, 2 * shotAngle));    // swap the negative in the next two lines for a different effect
+        Instantiate(bullet_2, bullet_position_4, Quaternion.Euler(0, 0, -2 * shotAngle));
     }
 }

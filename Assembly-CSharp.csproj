@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\Damage.cs" />
      <Compile Include="Assets\Scripts\Enemy_Blue_Bullet_Script.cs" />
      <Compile Include="Assets\Scripts\Enemy_Blue_Script.cs" />
@@ -60,7 +61,9 @@
      <Compile Include="Assets\Scripts\Hitbox_Script.cs" />
      <Compile Include="Assets\Scripts\Marissa.cs" />
      <Compile Include="Assets\Scripts\Marissa_Bullet_1.cs" />
+     <Compile Include="Assets\Scripts\Marissa_Bullet_2.cs" />
      <Compile Include="Assets\Scripts\Player_Bullet.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter.cs" />
      <Compile Include="Assets\Scripts\Powerup.cs" />
      <Compile Include="Assets\Scripts\Reimu_Bullet_1.cs" />
      <Compile Include="Assets\Scripts\Reimu_Bullet_1B.cs" />

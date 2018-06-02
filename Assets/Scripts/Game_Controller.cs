@@ -45,12 +45,12 @@ public class Game_Controller : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if(Time.time > spawn_time_1 && flag_1 > 0)
+		/*if(Time.time > spawn_time_1 && flag_1 > 0)
         {
             Instantiate(enemy_green, spawn_position_1, Quaternion.identity);
             spawn_time_1 += time_between_spawns_1;   // enemies will be spawned one after another with a 0.5 second delay in between spawns.
             flag_1--;
-        }
+        }*/
 
         if (Time.time > spawn_time_2 && flag_2 > 0)
         {
