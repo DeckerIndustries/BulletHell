@@ -1,0 +1,3 @@
+Make a Bullet Class
+Refactor ugly underscore variables
+Create a big static game class to store the screen boundaries and game state and stuff

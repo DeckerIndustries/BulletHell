@@ -20,7 +20,6 @@ public class Enemy_Green_Bullet_Script : Bullet
     {
         if (ExitBoundary() == true)
             Destroy(gameObject);
-
         // this gives the bullets a "wavy" pattern
         rb.velocity = new Vector3(Mathf.Sin((Time.time - startTime) * 2), -1 * vertical_speed);
     }

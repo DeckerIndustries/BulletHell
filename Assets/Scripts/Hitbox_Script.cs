@@ -15,17 +15,14 @@ public class Hitbox_Script : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        // display the hitbox if shift is held down, but not otherwise.
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //    transform.position = player.transform.position - new Vector3(0.017f, 0.009f, 0);
-        //else
-        //    transform.position = new Vector3(0, -2, 0);         // if the player is not holding shift, I don't want the hitbox to show up, so I just move it offscreen
 
+        // The hitbox is displayed only if shift is held down.
         if (Input.GetKey(KeyCode.LeftShift))
             this.gameObject.GetComponent<Renderer>().enabled = true;
         else
             this.gameObject.GetComponent<Renderer>().enabled = false;
 
+        // This makes the hitbox location at the center of the player.
         transform.position = player.transform.position - new Vector3(0.017f, 0.009f, 0);
     }
 
