@@ -74,8 +74,5 @@ public class PlayerCharacter : MonoBehaviour
         rb.position = new Vector2(posX, posY);
         rb.velocity = new Vector2(xVelocity, yVelocity);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b8141a40b3123319606c5fe9d6fcb8852b3d3a51
+

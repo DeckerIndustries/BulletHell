@@ -37,11 +37,6 @@ public class ReimuController : PlayerCharacter
         else
             MovePlayer(nonFocussedSpeed);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> b8141a40b3123319606c5fe9d6fcb8852b3d3a51
         // shoots bullets if the player is holding the z key
         if (Input.GetKey("z"))
         {
@@ -79,11 +74,7 @@ public class ReimuController : PlayerCharacter
         }
     }
 
-<<<<<<< HEAD
     void FireBullet1A()
-=======
-    void Fire_Bullet_1A()
->>>>>>> b8141a40b3123319606c5fe9d6fcb8852b3d3a51
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
