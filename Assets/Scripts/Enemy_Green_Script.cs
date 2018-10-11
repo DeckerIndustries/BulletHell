@@ -52,7 +52,12 @@ public class Enemy_Green_Script : MonoBehaviour
             hp -= other.GetComponent<Damage>().damage;
 
             if (hp <= 0)
+            {
                 Destroy(gameObject);
+                float randNum = Random.value;   // random number between 0 and 1
+                if (randNum < powerupDropRate)
+                    Instantiate(powerup, transform.position, Quaternion.identity);
+            }
             Destroy(other.gameObject);
         }
     }
@@ -68,8 +73,6 @@ public class Enemy_Green_Script : MonoBehaviour
 
     void OnDestroy()
     {
-        float randNum = Random.value;   // random number between 0 and 1
-        if (randNum < powerupDropRate)
-            Instantiate(powerup, transform.position, Quaternion.identity);
+        
     }
 }

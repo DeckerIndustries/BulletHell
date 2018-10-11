@@ -74,5 +74,15 @@ public class PlayerCharacter : MonoBehaviour
         rb.position = new Vector2(posX, posY);
         rb.velocity = new Vector2(xVelocity, yVelocity);
     }
+
+    public float getFocussedSpeed()
+    {
+        return focussedSpeed;
+    }
+
+    public float getNonFocussedSpeed()
+    {
+        return nonFocussedSpeed;
+    }
 }
 

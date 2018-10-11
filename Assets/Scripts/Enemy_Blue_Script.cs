@@ -20,7 +20,7 @@ public class Enemy_Blue_Script : MonoBehaviour
         xSpeed = -2;
         nextFire = 0;
         fireRate = 0.75f;
-        powerupDropRate = 0.25f;
+        powerupDropRate = 0.25f;    // the percent chance this ship will drop a powerup when it dies.
 
         // gets this object's rigidbody
         rb = GetComponent<Rigidbody2D>();
@@ -67,8 +67,13 @@ public class Enemy_Blue_Script : MonoBehaviour
         {
             hp -= other.GetComponent<Damage>().damage;
 
-            if(hp <= 0)
+            if (hp <= 0)
+            {
+                float randNum = Random.value;   // random number between 0 and 1
+                if (randNum < powerupDropRate)
+                    Instantiate(powerup, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+            }
             Destroy(other.gameObject);
         }
     }
@@ -84,8 +89,6 @@ public class Enemy_Blue_Script : MonoBehaviour
 
     void OnDestroy()
     {
-        float randNum = Random.value;   // random number between 0 and 1
-        if (randNum < powerupDropRate)
-            Instantiate(powerup, transform.position, Quaternion.identity);
+        
     }
 }

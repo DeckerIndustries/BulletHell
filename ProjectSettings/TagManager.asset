@@ -8,6 +8,7 @@ TagManager:
   - Enemy_Bullet
   - Enemy
   - Powerup
+  - EnemyLaser
   layers:
   - Default
   - TransparentFX

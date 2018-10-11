@@ -20,8 +20,8 @@ public class Marissa : PlayerCharacter
         fire_rate_2 = 0.10f;
         next_fire_2 = 0;
 
-        powerupBarrier1 = 10;
-        powerupBarrier2 = 20;
+        powerupBarrier1 = 5;
+        powerupBarrier2 = 10;
 
         xMin = -3; xMax = 3; yMin = -0.5f; yMax = 8.5f;
 
@@ -61,10 +61,15 @@ public class Marissa : PlayerCharacter
             // Here, we update the shot angle for the secondary bullets.  The shots don't rotate in focused mode
             if (!(Input.GetKey(KeyCode.LeftShift)))
                 shotAngleTime += Time.deltaTime;
+
+            // this is to make it easier for the player to focus the bullets at a certain angle.  Without this it 
+            // feels like there is a delayed effect from holding shift to the angle freezing.
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+                shotAngleTime -= 0.1f;
         }
 
         // Calculates the shot angle for the secondary bullets for the next frame.
-        shotAngle = 10 * Mathf.Sin(3 * shotAngleTime) + 5; // This will always be between -5 and 15 degrees.
+        shotAngle = 7.5f * Mathf.Sin(3 * shotAngleTime) + 2.5f; // This will always be between -5 and 10 degrees.
     }
 
     // only powerups collide with the player (bullets collide with the hitbox)
@@ -88,15 +93,15 @@ public class Marissa : PlayerCharacter
     {
         Vector3 bullet_position_1 = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.4f, 0);
         Vector3 bullet_position_2 = new Vector3(transform.position.x - 0.4f, transform.position.y + 0.4f, 0);
-        Instantiate(bullet_2, bullet_position_1, Quaternion.Euler(0, 0, shotAngle));      // swap the negative in the next two lines for a different effect
-        Instantiate(bullet_2, bullet_position_2, Quaternion.Euler(0, 0, -shotAngle));
+        Instantiate(bullet_2, bullet_position_1, Quaternion.Euler(0, 0, -shotAngle));      // swap the negative in the next two lines for a different effect
+        Instantiate(bullet_2, bullet_position_2, Quaternion.Euler(0, 0, shotAngle));
     }
 
     void FireBullet2B()
     {
         Vector3 bullet_position_3 = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.1f, 0);
         Vector3 bullet_position_4 = new Vector3(transform.position.x - 0.6f, transform.position.y + 0.1f, 0);
-        Instantiate(bullet_2, bullet_position_3, Quaternion.Euler(0, 0, 2 * shotAngle));    // swap the negative in the next two lines for a different effect
-        Instantiate(bullet_2, bullet_position_4, Quaternion.Euler(0, 0, -2 * shotAngle));
+        Instantiate(bullet_2, bullet_position_3, Quaternion.Euler(0, 0, -2 * shotAngle));    // swap the negative in the next two lines for a different effect
+        Instantiate(bullet_2, bullet_position_4, Quaternion.Euler(0, 0, 2 * shotAngle));
     }
 }

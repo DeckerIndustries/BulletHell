@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     // checks if the the bullet left the boundary of our game (which I decided to be slightly larger than the part the camera sees)
     protected bool ExitBoundary()
     {
-        if (rb.position.x < -4 || rb.position.x > 4 || rb.position.y < -1.5 || rb.position.y > 9.5)
+        if (rb.position.x < -3.5 || rb.position.x > 3.5 || rb.position.y < -1.25 || rb.position.y > 9.25)
             return true;
         else
             return false;
