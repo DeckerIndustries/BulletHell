@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Hitbox_Script : MonoBehaviour
 {
-    private GameObject player;
     private int lives;          // we put the number of lives the player has left in the hitbox script.
     private bool isInvincible;  // this stores if the player is invincible (when respawning after dying)
     private float timeOfLastDeath;
     private float invincibilityTime = 3;  // stays invincible for 3 seconds after dying
-    private float timeSinceDying;
+
+    private GameObject player;
 
 	// Use this for initialization
 	void Start ()
@@ -37,17 +37,16 @@ public class Hitbox_Script : MonoBehaviour
         if (isInvincible == true)
         {
             // if it's been more than 3 seconds since the player respawned, it is no longer invincible
-            timeSinceDying = Time.time - timeOfLastDeath;
-            if (timeSinceDying > invincibilityTime)
+            if (Time.time - timeOfLastDeath > invincibilityTime)
+            {
+                this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
                 isInvincible = false;
+            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(isInvincible == true)
-            return;
-
         // resolves collision with an enemy or an enemy bullet
         if (other.tag == "Enemy" || other.tag == "Enemy_Bullet" || other.tag == "EnemyLaser")
         {
@@ -68,5 +67,6 @@ public class Hitbox_Script : MonoBehaviour
         player.transform.position = new Vector3(0, 0, 0);
         lives--;
         isInvincible = true;
+        this.gameObject.GetComponent<CircleCollider2D>().enabled = false;   // disable the collider of the hitbox temporarily
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Touhou game", "Assembly-CSharp.csproj", "{052BB355-02F3-FF03-9FD0-8E6B1053D330}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{052BB355-02F3-FF03-9FD0-8E6B1053D330}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

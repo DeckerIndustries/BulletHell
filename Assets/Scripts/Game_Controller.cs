@@ -15,7 +15,10 @@ public class Game_Controller : MonoBehaviour
 
     public GameObject enemy_green;
     public GameObject enemy_blue;
-    public GameObject bossHelper;
+    public GameObject bossHelperD;
+    public GameObject bossHelperU;
+    public GameObject bossHelperL;
+    public GameObject bossHelperR;
 
     private float spawn_time_1;
     private Vector2 spawn_position_1;
@@ -32,13 +35,17 @@ public class Game_Controller : MonoBehaviour
     private int num_enemies_3;
     private float time_between_spawns_3;
 
-    Phase phase;
-    int transitionTime1;    // at this time, we transition to the second phase.
+    private Phase phase;
+    private int subphase;               // This is currently used so we know which midboss / boss attack we are on.
+    private float transitionTimeA;    // at this time, we transition from phase A to the next phase..
+    private float subTransitionTime1;
+    private float phaseStartTime;       // the time when the current phase has started
 
     // Use this for initialization
     void Start ()
     {
         phase = Phase.STAGE_A;
+        subphase = 0;
 
         // spawn 2 seconds after starting
         spawn_time_1 = 2;
@@ -56,7 +63,9 @@ public class Game_Controller : MonoBehaviour
         num_enemies_3 = 10;
         time_between_spawns_3 = 0.5f;
 
-        transitionTime1 = 3;
+        subphase = 1;
+        transitionTimeA = 5;        // amount of time spent in phase A before transitioning to the next phase.
+        subTransitionTime1 = 5;
     }
 	
 	// Update is called once per frame
@@ -86,7 +95,7 @@ public class Game_Controller : MonoBehaviour
                 num_enemies_3--;
             }
 
-            if(Time.time > transitionTime1)
+            if(Time.time > transitionTimeA)
             {
                 GameObject[] gameObjects1 = GameObject.FindGameObjectsWithTag("Enemy");
                 for (int i = 0; i < gameObjects1.Length; i++)
@@ -96,14 +105,24 @@ public class Game_Controller : MonoBehaviour
                 for (int i = 0; i < gameObjects2.Length; i++)
                     Destroy(gameObjects2[i]);
 
-                Instantiate(bossHelper, new Vector2(-3.5f, -1), Quaternion.Euler(0, 0, 90));
+                Instantiate(bossHelperD, new Vector2(-3.83f, -1), Quaternion.Euler(0, 0, 90));
+                Instantiate(bossHelperU, new Vector2(3.83f, 9), Quaternion.Euler(0, 0, -90));
+                Instantiate(bossHelperL, new Vector2(-3.33f, 9.5f), Quaternion.identity);
+                Instantiate(bossHelperR, new Vector2(3.33f, -1.5f), Quaternion.Euler(0, 0, 180));
+
+                phaseStartTime = Time.time;
                 phase = Phase.MIDBOSS;
             }
         }
         
         else if(phase == Phase.MIDBOSS)
         {
+            if(subphase == 1)
+                if (Time.time - phaseStartTime >= subTransitionTime1)
+                    subphase = 2;
 
+            //else if(subphase == 2)
+                
         }
     }
 
