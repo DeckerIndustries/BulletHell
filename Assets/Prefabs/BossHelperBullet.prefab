@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212245117503240996}
   - component: {fileID: 50496801289359054}
   - component: {fileID: 70372314713977226}
+  - component: {fileID: 114427611983046066}
   m_Layer: 0
   m_Name: BossHelperBullet
   m_TagString: Enemy_Bullet
@@ -77,6 +78,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.13, y: 0.08}
   m_Direction: 0
+--- !u!114 &114427611983046066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526094239234836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18c825af5568f849ac7c243bbba0b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212245117503240996
 SpriteRenderer:
   m_ObjectHideFlags: 1
