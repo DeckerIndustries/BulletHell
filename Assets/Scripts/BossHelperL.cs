@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class BossHelperL : BossHelper
 {
-    void Start ()
+    void Awake()
     {
-        startTime0 = Time.time;
-        startTime1 = startTime0 + 1;
-        startTime1t= startTime1 + 2;
-        startTime2 = startTime1t + 2;
-
         velocity = -1;
-        fireRate = 0.1f;
         nextFire = 0;
-        bulletSpeed = 2;
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, velocity);
     }
@@ -29,6 +22,8 @@ public class BossHelperL : BossHelper
                 velocity = 4;
                 rb.velocity = new Vector2(0, -velocity);
                 phase = 1;
+                fireRate = 0.1f;
+                bulletSpeed = 2;
             }
         }
         else if (phase == 1)
@@ -37,10 +32,7 @@ public class BossHelperL : BossHelper
 
             if (Time.time > nextFire)
             {
-                nextFire = Time.time + fireRate;
-                fireAngle = Random.Range(-30f, 30f);        // random bullet angle between -30 and 30 degrees
-                localBullet = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, fireAngle));
-                localBullet.transform.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(fireAngle * Mathf.PI / 180), Mathf.Sin(fireAngle * Mathf.PI / 180)) * bulletSpeed;
+                FireBullet(-30, 30);
             }
             if (Time.time >= startTime1t)
             {
@@ -56,6 +48,7 @@ public class BossHelperL : BossHelper
             {
                 phase = 2;
                 velocity = 2;
+                // creates a laser and sets it to the proper position.
                 localBossHelperLaser = Instantiate(bossHelperLaser3, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
                 localBossHelperLaser.transform.position += new Vector3(localBossHelperLaser.GetComponent<Renderer>().bounds.size.x / 2, 0, 0);
                 localBossHelperLaser.transform.parent = transform;
@@ -64,6 +57,97 @@ public class BossHelperL : BossHelper
         else if (phase == 2)
         {
             MoveVerticallyBetweenBoundaries();
+
+            if (Time.time > startTime2t)
+            {
+                MoveVerticallyToPosition(bottomBoundary, startTime3 - startTime2t);
+                Destroy(localBossHelperLaser);
+                phase = 2.5f;
+            }
         }
-	}
+
+        else if (phase == 2.5)
+        {
+            if (Time.time > startTime3)
+            {
+                localBossHelperLaser = Instantiate(bossHelperLaser3, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
+                localBossHelperLaser.transform.position += new Vector3(localBossHelperLaser.GetComponent<Renderer>().bounds.size.x / 2, 0, 0);
+                localBossHelperLaser.transform.parent = transform;
+                rb.velocity = new Vector2(0, 0);
+
+                subTransitionTime1 = Time.time + 2.7f;
+                subTransitionTime2 = subTransitionTime1 + 2.1f;
+                subTransitionTime3 = subTransitionTime2 + 2f;
+                subTransitionTime4 = subTransitionTime3 + 2;
+
+                bulletSpeed = 1;
+                fireRate = 0.25f;
+
+                phase = 3;
+            }
+        }
+        else if(phase == 3)
+        {
+            MovePhase3();
+        }
+    }
+
+    void MovePhase3()
+    {
+        // does not move
+        if (subphase == 0)
+        {
+            if (Time.time > subTransitionTime1)
+            {
+                MoveVerticallyToPosition(topBoundary, subTransitionTime2 - subTransitionTime1);
+                subphase = 1;
+            }
+        }
+
+        // moves to top of the screen
+        else if (subphase == 1)
+        {
+            if (Time.time > subTransitionTime2)
+            {
+                // turns off the laser for the next part of the attack pattern
+                localBossHelperLaser.GetComponent<Renderer>().enabled = false;
+                localBossHelperLaser.GetComponent<BoxCollider2D>().enabled = false;
+
+                rb.velocity = new Vector2(0, 0);
+                subphase = 2;
+            }
+        }
+
+        // does not move
+        else if (subphase == 2)
+        {
+            if (Time.time > subTransitionTime3)
+            {
+                MoveVerticallyToPosition(bottomBoundary, subTransitionTime4 - subTransitionTime3);
+                subphase = 3;
+            }
+        }
+
+        // moves to bottom of the screen while firing bullets
+        else if (subphase == 3)
+        {
+            FireBullet(-30, 30);
+
+            if (Time.time > subTransitionTime4)
+            {
+                rb.velocity = new Vector2(0, 0);
+                subphase = 0;
+
+                // turns back on the laser for the next part of the attack pattern
+                localBossHelperLaser.GetComponent<Renderer>().enabled = true;
+                localBossHelperLaser.GetComponent<BoxCollider2D>().enabled = true;
+
+                // set new subTransitionTimes
+                subTransitionTime1 = Time.time + 2.7f;
+                subTransitionTime2 = subTransitionTime1 + 2.1f;
+                subTransitionTime3 = subTransitionTime2 + 2f;
+                subTransitionTime4 = subTransitionTime3 + 2;
+            }
+        }
+    }
 }

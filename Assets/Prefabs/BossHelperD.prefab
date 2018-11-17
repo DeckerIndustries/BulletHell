@@ -76,8 +76,10 @@ MonoBehaviour:
   bullet: {fileID: 1526094239234836, guid: cd7d3124a082441409f76b45e9a8a355, type: 2}
   bossHelperLaser1: {fileID: 1131850704669208, guid: a1094b64af3ecf24ab2d6829e0bf505e,
     type: 2}
-  bossHelperLaser2: {fileID: 0}
-  bossHelperLaser3: {fileID: 0}
+  bossHelperLaser2: {fileID: 1044024043208506, guid: 352c791821743f34098bebcaf192a2a5,
+    type: 2}
+  bossHelperLaser3: {fileID: 1920112799493696, guid: 755df7e19503cd946aa395d4311a7618,
+    type: 2}
 --- !u!212 &212831887790981628
 SpriteRenderer:
   m_ObjectHideFlags: 1

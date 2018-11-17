@@ -30,9 +30,9 @@ public class Hitbox_Script : MonoBehaviour
     {
         // The hitbox is displayed only if shift is held down.
         if (Input.GetKey(KeyCode.LeftShift))
-            this.gameObject.GetComponent<Renderer>().enabled = true;
+            gameObject.GetComponent<Renderer>().enabled = true;
         else
-            this.gameObject.GetComponent<Renderer>().enabled = false;
+            gameObject.GetComponent<Renderer>().enabled = false;
 
         if (isInvincible == true)
         {
@@ -67,6 +67,6 @@ public class Hitbox_Script : MonoBehaviour
         player.transform.position = new Vector3(0, 0, 0);
         lives--;
         isInvincible = true;
-        this.gameObject.GetComponent<CircleCollider2D>().enabled = false;   // disable the collider of the hitbox temporarily
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;   // disable the collider of the hitbox temporarily
     }
 }

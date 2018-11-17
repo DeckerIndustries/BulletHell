@@ -78,6 +78,8 @@ MonoBehaviour:
     type: 2}
   bossHelperLaser2: {fileID: 1044024043208506, guid: 352c791821743f34098bebcaf192a2a5,
     type: 2}
+  bossHelperLaser3: {fileID: 1920112799493696, guid: 755df7e19503cd946aa395d4311a7618,
+    type: 2}
 --- !u!212 &212866230133137074
 SpriteRenderer:
   m_ObjectHideFlags: 1
