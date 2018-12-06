@@ -15,6 +15,10 @@ public class BossHelper : MonoBehaviour
     protected float startTime2;
     protected float startTime2t;
     protected float startTime3;
+    protected float startTime3t;
+    protected float startTime4;
+    protected float startTime4t;
+    protected float startTime5;
 
     protected float subTransitionTime1;
     protected float subTransitionTime2;
@@ -49,6 +53,10 @@ public class BossHelper : MonoBehaviour
         startTime2 = startTime1t + 2;
         startTime2t = startTime2 + 10;
         startTime3 = startTime2t + 2;
+        startTime3t = startTime3 + 10;
+        startTime4 = startTime3t + 2;
+        startTime4t = startTime4 + 10;
+        startTime5 = startTime4t + 2;
     }
 	
 	// Update is called once per frame
@@ -86,15 +94,13 @@ public class BossHelper : MonoBehaviour
     // moves the object to the specified position (x coordinate) in the specified amount of time
     protected void MoveHorizontallyToPosition(float pos, float time)
     {
-        velocity = (pos - rb.position.x) / time;
-        rb.velocity = new Vector2(velocity, 0);
+        rb.velocity = new Vector2((pos - rb.position.x) / time, 0);
     }
 
     // moves the object to the specified position (y coordinate) in the specified amount of time
     protected void MoveVerticallyToPosition(float pos, float time)
     {
-        velocity = (pos - rb.position.y) / time;
-        rb.velocity = new Vector2(0, velocity);
+        rb.velocity = new Vector2(0, (pos - rb.position.y) / time);
     }
 
     protected void FireBullet(float lowAngle, float highAngle)

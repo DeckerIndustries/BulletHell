@@ -11,6 +11,7 @@ public class BossHelperU : BossHelper
         rb = GetComponent<Rigidbody2D>();
         nextFire = 0;
         rb.velocity = new Vector2(velocity, 0);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -71,7 +72,7 @@ public class BossHelperU : BossHelper
             {
                 rb.velocity = new Vector2(0, 0);
                 localBossHelperLaser = Instantiate(bossHelperLaser3, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
-                localBossHelperLaser.transform.localScale += new Vector3(0, 2, 0);
+                localBossHelperLaser.transform.localScale += new Vector3(0, 1.5f, 0);
                 localBossHelperLaser.transform.position -= new Vector3(0, localBossHelperLaser.GetComponent<Renderer>().bounds.size.y / 2, 0);
                 localBossHelperLaser.transform.parent = transform;  // this makes the laser move with this object
 
@@ -87,18 +88,65 @@ public class BossHelperU : BossHelper
                 phase = 3;
             }
         }
-        else if(phase == 3)
+        else if (phase == 3)
         {
             MovePhase3();
+
+            if (Time.time >= startTime3t)
+            {
+                Destroy(localBossHelperLaser);
+                MoveHorizontallyToPosition(rightBoundary, startTime4 - startTime3t);
+                phase = 3.5f;
+            }
+        }
+        else if (phase == 3.5f)
+        {
+            if (Time.time >= startTime4)
+            {
+                rb.velocity = new Vector2(0, 0);
+                velocity = 2;
+                phase = 4f;
+            }
+        }
+        else if (phase == 4)
+        {
+            MoveHorizontallyBetweenBoundaries();
+
+            // fires bullets straight down
+            FireBullet(-90, -90);
+
+            if (Time.time >= startTime4t)
+            {
+                MoveHorizontallyToPosition(rightBoundary, startTime5 - startTime4t);
+                phase = 4.5f;
+            }
+        }
+        else if (phase == 4.5f)
+        {
+            if (Time.time >= startTime5)
+            {
+                rb.velocity = new Vector2(0, 0);
+                localBossHelperLaser = Instantiate(bossHelperLaser1, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
+                localBossHelperLaser.transform.position -= new Vector3(0, localBossHelperLaser.GetComponent<Renderer>().bounds.size.y / 2, 0);
+                localBossHelperLaser.transform.parent = transform;  // this makes the laser move with this object
+                phase = 5f;
+            }
+        }
+        else if (phase == 5)
+        {
+            MoveWithPlayer();
         }
     }
 
-    // moves parallel to the player when the player moves right.  But stays still when the player moves left.  This means the player's left movements will be limited.
-    void MovePhase1()
+    // moves parallel to the player when the player moves left.  But stays still when the player moves right.  This means the player's left movements will be limited.
+    void MoveWithPlayer()
     {
-        if (player.transform.position.x <= transform.position.x)
-            transform.position = new Vector2(-2.83f, -1);
-        if (player.GetComponent<Rigidbody2D>().velocity.x > 0)
+        // If the player moves to the right of the laser, we reset the laser's position to the right side of the screen.
+        if (player.transform.position.x >= transform.position.x)
+            transform.position = new Vector2(rightBoundary, transform.position.y);
+
+        // if the player moves left, this object also moves left at the same speed.  Otherwise this object stays still.
+        if (player.GetComponent<Rigidbody2D>().velocity.x < 0)
             velocity = player.GetComponent<Rigidbody2D>().velocity.x;
         else
             velocity = 0;

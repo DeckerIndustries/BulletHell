@@ -64,7 +64,7 @@ public class Game_Controller : MonoBehaviour
         time_between_spawns_3 = 0.5f;
 
         subphase = 1;
-        transitionTimeA = 5;        // amount of time spent in phase A before transitioning to the next phase.
+        transitionTimeA = 20;        // amount of time spent in phase A before transitioning to the next phase.
         subTransitionTime1 = 5;
     }
 	
@@ -117,9 +117,9 @@ public class Game_Controller : MonoBehaviour
         
         else if(phase == Phase.MIDBOSS)
         {
-            if(subphase == 1)
-                if (Time.time - phaseStartTime >= subTransitionTime1)
-                    subphase = 2;
+            //if(subphase == 1)
+                //if (Time.time - phaseStartTime >= subTransitionTime1)
+                    //subphase = 2;
 
             //else if(subphase == 2)
                 

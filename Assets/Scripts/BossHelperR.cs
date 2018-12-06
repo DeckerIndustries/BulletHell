@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossHelperR : BossHelper
 {
-    float waitTimePhase2;
+    float waitTime;
 
     void Awake()
     {
@@ -12,7 +12,7 @@ public class BossHelperR : BossHelper
         nextFire = 0;
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, velocity);
-        waitTimePhase2 = 2;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -32,20 +32,18 @@ public class BossHelperR : BossHelper
         else if (phase == 1)
         {
             MoveVerticallyBetweenBoundaries();
-            if (Time.time > nextFire)
-            {
-                FireBullet(150, 210);
-            }
-            if(Time.time >= startTime1t)
+            FireBullet(150, 210);
+            if (Time.time >= startTime1t)
             {
                 phase = 1.5f;
                 MoveVerticallyToPosition(topBoundary, startTime2 - startTime1t);
             }
         }
-        else if(phase == 1.5)
+        else if (phase == 1.5)
         {
             if (Time.time >= startTime2)
             {
+                waitTime = 2;
                 phase = 2;
 
                 // makes this object shoot a laser (and positions it correctly)
@@ -56,11 +54,13 @@ public class BossHelperR : BossHelper
                 rb.velocity = new Vector2(0, 0);
             }
         }
-        else if(phase == 2)
+        else if (phase == 2)
         {
-            MovePhase2();
+            // only starts moving after "waitTime" seconds
+            if (Time.time - startTime2 >= waitTime)
+                MoveVerticallyBetweenBoundaries();
 
-            if(Time.time >= startTime2t)
+            if (Time.time >= startTime2t)
             {
                 MoveVerticallyToPosition(topBoundary, startTime3 - startTime2t);
                 Destroy(localBossHelperLaser);
@@ -73,6 +73,7 @@ public class BossHelperR : BossHelper
             {
                 // makes this object shoot a laser (and positions it correctly)
                 localBossHelperLaser = Instantiate(bossHelperLaser3, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
+                localBossHelperLaser.transform.localScale -= new Vector3(0, 1.5f, 0);
                 localBossHelperLaser.transform.position -= new Vector3(localBossHelperLaser.GetComponent<Renderer>().bounds.size.x / 2, 0, 0);
                 localBossHelperLaser.transform.parent = transform;  // this makes the laser move with this object
                 rb.velocity = new Vector2(0, 0);
@@ -91,17 +92,55 @@ public class BossHelperR : BossHelper
         else if (phase == 3)
         {
             MovePhase3();
+
+            if(Time.time >= startTime3t)
+            {
+                Destroy(localBossHelperLaser);
+                MoveVerticallyToPosition(bottomBoundary, startTime4 - startTime3t);
+                phase = 3.5f;
+                waitTime = 2;
+            }
+        }
+        else if (phase == 3.5f)
+        {
+            if (Time.time >= startTime4)
+            {
+                localBossHelperLaser = Instantiate(bossHelperLaser3, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
+                localBossHelperLaser.transform.localScale += new Vector3(0, 7, 0);
+                localBossHelperLaser.transform.position -= new Vector3(localBossHelperLaser.GetComponent<Renderer>().bounds.size.x / 2, 0, 0);
+                localBossHelperLaser.transform.parent = transform;
+                MoveVerticallyToPosition((topBoundary + bottomBoundary) / 2 - 1, waitTime);
+                phase = 4f;
+            }
+        }
+        else if (phase == 4)
+        {
+            if (Time.time - startTime4 > waitTime && rb.velocity.y != 0)
+                rb.velocity = new Vector2(0, 0);
+
+            if (Time.time > startTime4t)
+            {
+                Destroy(localBossHelperLaser);
+                MoveVerticallyToPosition(bottomBoundary, startTime5 - startTime4t);
+                phase = 4.5f;
+            }
+        }
+        else if(phase == 4.5f)
+        {
+            if (Time.time >= startTime5)
+            {
+                velocity = 20;
+                bulletSpeed = 1;
+                fireRate = 0.075f;
+                phase = 5;
+            }
+        }
+        else if(phase == 5)
+        {
+            MoveVerticallyBetweenBoundaries();
+            FireBullet(150, 210);
         }
 
-    }
-
-    void MovePhase2()
-    {
-        // wait "waitTimePhase2" seconds before doing anything
-        if(Time.time - startTime2 < waitTimePhase2)
-            return;
-        else
-            MoveVerticallyBetweenBoundaries();
     }
 
     void MovePhase3()
